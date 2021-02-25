@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1004224179614",
+    "firebase_url": "https://practicacomercios-default-rtdb.firebaseio.com",
+    "project_id": "practicacomercios",
+    "storage_bucket": "practicacomercios.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004224179614:android:52ca44930aae24d1ea7a8f",
+        "android_client_info": {
+          "package_name": "com.example.practicacomerciosadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004224179614-50e3v0et5qubrsjgs0k8m7darr83a05r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCEwk-ueCT1VT5cr0IKVFSpaoPffLxNm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004224179614-50e3v0et5qubrsjgs0k8m7darr83a05r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004224179614:android:7af49b7132d7db40ea7a8f",
+        "android_client_info": {
+          "package_name": "com.rafaelescudero.practicacomercios"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004224179614-50e3v0et5qubrsjgs0k8m7darr83a05r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCEwk-ueCT1VT5cr0IKVFSpaoPffLxNm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004224179614-50e3v0et5qubrsjgs0k8m7darr83a05r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
