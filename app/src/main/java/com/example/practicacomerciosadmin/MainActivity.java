@@ -42,30 +42,31 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Rellena los campos para iniciar sesión", Toast.LENGTH_LONG).show();
 
                 } else {
+                    if(email.getText().toString().equals("admin@admin.com")) {
+                        FirebaseAuth.getInstance().signInWithEmailAndPassword(email.getText().toString(), pass.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
 
-                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email.getText().toString(),pass.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
+                                    Intent intent = new Intent(getApplicationContext(), Main.class);
+                                    startActivity(intent);
 
-                                Intent intent = new Intent(getApplicationContext(), Main.class);
-                                startActivity(intent);
+                                    Toast.makeText(getApplicationContext(), "Conectado correctamente.", Toast.LENGTH_LONG).show();
 
-                                Toast.makeText(getApplicationContext(),"Conectado correctamente.", Toast.LENGTH_LONG).show();
+                                } else {
 
-                            } else {
+                                    Toast.makeText(getApplicationContext(), "Error al iniciar sesión", Toast.LENGTH_LONG).show();
+                                    email.setText("");
+                                    pass.setText("");
 
-                                Toast.makeText(getApplicationContext(),"Error al iniciar sesión", Toast.LENGTH_LONG).show();
-                                email.setText("");
-                                pass.setText("");
-
+                                }
                             }
+                        });
+                    }else{
 
-                        }
-                    });
+                        Toast.makeText(getApplicationContext(),"Email Admin incorrecto",Toast.LENGTH_LONG).show();
 
-
-
+                    }
                 }
             }
         });

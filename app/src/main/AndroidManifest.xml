@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.practicacomerciosadmin">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +15,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".vistas.VistaComercio"></activity>
-        <activity android:name=".vistas.VistaUsuario" />
-        <activity android:name=".vistas.ActivityUsuarios" />
-        <activity android:name=".vistas.CrearComercio" />
-        <activity android:name=".vistas.ActivityComercios" />
-        <activity android:name=".vistas.Main" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".vistas.Pedido.VistaPedido"></activity>
+        <activity android:name=".vistas.Pedido.ActivityPedidos"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".vistas.Producto.EditarProducto"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".vistas.Producto.VistaProducto"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".vistas.Comercio.EditarComercio"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".vistas.Producto.CrearProducto"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".vistas.Producto.ActivityProductos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".vistas.Comercio.VistaComercio"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".vistas.Usuario.VistaUsuario"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".vistas.Usuario.ActivityUsuarios"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".vistas.Comercio.CrearComercio"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".vistas.Comercio.ActivityComercios"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".vistas.Main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

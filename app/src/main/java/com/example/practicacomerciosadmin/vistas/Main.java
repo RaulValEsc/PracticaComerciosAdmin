@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.practicacomerciosadmin.R;
+import com.example.practicacomerciosadmin.vistas.Comercio.ActivityComercios;
+import com.example.practicacomerciosadmin.vistas.Usuario.ActivityUsuarios;
 
 public class Main extends AppCompatActivity {
 
@@ -36,7 +38,8 @@ public class Main extends AppCompatActivity {
         bUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), ActivityUsuarios.class);
+                startActivity(intent);
             }
         });
     }

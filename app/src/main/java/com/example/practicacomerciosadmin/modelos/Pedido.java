@@ -4,14 +4,24 @@ public class Pedido {
 
     String idCom,idProd,idUser;
     int cantidad;
-    boolean entrega = false;
+    double subtotal;
 
-    public Pedido(String idCom, String idProd, String idUser, int cantidad, boolean entrega) {
+    boolean entregado = false;
+    boolean pendiente = true;
+    boolean confirmado = false;
+    boolean rechazado = false;
+    boolean enviado = false;
+
+    public Pedido(){}
+
+    public Pedido(String idCom, String idProd, String idUser, int cantidad,double precio) {
         this.idCom = idCom;
         this.idProd = idProd;
         this.idUser = idUser;
         this.cantidad = cantidad;
-        this.entrega = entrega;
+
+        this.subtotal = cantidad*precio;
+
     }
 
     public String getIdCom() {
@@ -46,11 +56,51 @@ public class Pedido {
         this.cantidad = cantidad;
     }
 
-    public boolean isEntrega() {
-        return entrega;
+    public double getSubtotal() {
+        return subtotal;
     }
 
-    public void setEntrega(boolean entrega) {
-        this.entrega = entrega;
+    public void setSubtotal(double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public boolean isEntregado() {
+        return entregado;
+    }
+
+    public void setEntregado(boolean entregado) {
+        this.entregado = entregado;
+    }
+
+    public boolean isPendiente() {
+        return pendiente;
+    }
+
+    public void setPendiente(boolean pendiente) {
+        this.pendiente = pendiente;
+    }
+
+    public boolean isConfirmado() {
+        return confirmado;
+    }
+
+    public void setConfirmado(boolean confirmado) {
+        this.confirmado = confirmado;
+    }
+
+    public boolean isRechazado() {
+        return rechazado;
+    }
+
+    public void setRechazado(boolean rechazado) {
+        this.rechazado = rechazado;
+    }
+
+    public boolean isEnviado() {
+        return enviado;
+    }
+
+    public void setEnviado(boolean enviado) {
+        this.enviado = enviado;
     }
 }

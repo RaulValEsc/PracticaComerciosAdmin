@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
-    tools:context=".vistas.Usuario.VistaUsuario">
+    tools:context=".vistas.Producto.VistaProducto">
 
     <ImageView
-        android:id="@+id/ivUsuario"
+        android:id="@+id/ivProducto"
         android:layout_width="219dp"
         android:layout_height="219dp"
         android:layout_marginTop="84dp"
@@ -19,41 +19,45 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvNombreUsuario"
+        android:id="@+id/tvNombreProducto"
         android:layout_width="157dp"
         android:layout_height="37dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginLeft="127dp"
         android:layout_marginTop="344dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginRight="127dp"
         android:gravity="center"
         android:text="Nombre"
-        app:layout_constraintEnd_toEndOf="@+id/ivUsuario"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="@+id/ivUsuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvSaldo"
+        android:id="@+id/tvStock"
         android:layout_width="157dp"
         android:layout_height="37dp"
-        android:layout_marginTop="436dp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
-        android:text="Saldo"
-        app:layout_constraintEnd_toEndOf="@+id/ivUsuario"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="@+id/ivUsuario"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Stock"
+        app:layout_constraintEnd_toEndOf="@+id/tvNombreProducto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvNombreProducto"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreProducto" />
 
-    <Button
-        android:id="@+id/bPedidos"
-        android:layout_width="273dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="520dp"
-        android:text="Ver Pedidos"
-        app:layout_constraintEnd_toEndOf="@+id/ivUsuario"
-        app:layout_constraintStart_toStartOf="@+id/ivUsuario"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tvPrecio"
+        android:layout_width="157dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="Precio"
+        app:layout_constraintEnd_toEndOf="@+id/tvStock"
+        app:layout_constraintStart_toStartOf="@+id/tvStock"
+        app:layout_constraintTop_toBottomOf="@+id/tvStock" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tbUsuario"
+        android:id="@+id/tbProducto"
         android:layout_width="411dp"
         android:layout_height="61dp"
         android:background="?attr/colorPrimary"

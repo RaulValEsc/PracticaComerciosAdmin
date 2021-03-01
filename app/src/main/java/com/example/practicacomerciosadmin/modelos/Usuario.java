@@ -2,25 +2,28 @@ package com.example.practicacomerciosadmin.modelos;
 
 import android.net.Uri;
 
-import java.util.ArrayList;
-
-public class Comercio {
+public class Usuario {
 
     String imageUri, imgStorage;
-    String nombre,descripcion;
+    String nombre, email;
+    Tarjeta tarjeta;
 
-    public Comercio(){}
+    public Usuario(){
 
-    public Comercio(String nombre, String descripcion,String imageUri, String imgStorage){
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.imageUri = imageUri;
-        this.imgStorage = imgStorage;
     }
 
-    public Comercio(String nombre, String descripcion,Uri imageUri, Uri imgStorage){
+    public Usuario(String nombre, Tarjeta tarjeta, String email,String imageUri, String imgStorage) {
+        this.imageUri = imageUri;
+        this.imgStorage = imgStorage;
         this.nombre = nombre;
-        this.descripcion = descripcion;
+        this.email = email;
+        this.tarjeta = tarjeta;
+    }
+
+    public Usuario(String nombre, Tarjeta tarjeta, String email, Uri imageUri, Uri imgStorage) {
+        this.nombre = nombre;
+        this.email = email;
+        this.tarjeta = tarjeta;
         if(imageUri != null){
             this.imageUri = imageUri.toString();
         }
@@ -45,12 +48,12 @@ public class Comercio {
         this.imgStorage = imgStorage;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNombre() {
@@ -59,5 +62,13 @@ public class Comercio {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Tarjeta getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(Tarjeta tarjeta) {
+        this.tarjeta = tarjeta;
     }
 }

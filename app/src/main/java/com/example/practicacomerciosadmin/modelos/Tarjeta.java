@@ -3,10 +3,13 @@ package com.example.practicacomerciosadmin.modelos;
 public class Tarjeta {
 
     String id;
-    float saldo;
+    double saldo;
 
-    public Tarjeta(String id, float saldo) {
-        this.id = id;
+    public Tarjeta(){
+
+    }
+
+    public Tarjeta(double saldo){
         this.saldo = saldo;
     }
 
@@ -18,11 +21,11 @@ public class Tarjeta {
         this.id = id;
     }
 
-    public float getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 }

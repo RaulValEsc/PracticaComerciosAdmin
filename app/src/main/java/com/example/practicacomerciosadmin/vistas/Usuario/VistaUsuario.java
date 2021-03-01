@@ -1,4 +1,4 @@
-package com.example.practicacomerciosadmin.vistas;
+package com.example.practicacomerciosadmin.vistas.Usuario;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,13 @@ import android.os.Bundle;
 
 import com.example.practicacomerciosadmin.R;
 
-public class ActivityUsuarios extends AppCompatActivity {
+public class VistaUsuario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_usuarios);
+        setContentView(R.layout.activity_vista_usuario);
+
+
     }
 }

@@ -5,43 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
-    tools:context=".vistas.Main">
+    tools:context=".vistas.Pedido.ActivityPedidos">
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textView4"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="@color/colorPrimary"
         android:gravity="center_horizontal|center_vertical"
-        android:text="INICIO"
+        android:text="PEDIDOS"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/bUsuario"
-        android:layout_width="182dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="150dp"
-        android:background="@color/colorPrimary"
-        android:text="Usuarios"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bComercio" />
-
-    <Button
-        android:id="@+id/bComercio"
-        android:layout_width="182dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="220dp"
-        android:background="@color/colorPrimary"
-        android:text="Comercios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

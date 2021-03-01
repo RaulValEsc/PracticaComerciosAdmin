@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".vistas.Comercio.CrearComercio">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fondo"
         android:orientation="vertical">
 
         <ImageView
@@ -21,7 +21,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <EditText
-            android:id="@+id/etnombreComercio"
+            android:id="@+id/etnombreProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -31,19 +31,31 @@
             android:hint="Nombre"
             android:inputType="textPersonName" />
 
+
         <EditText
-            android:id="@+id/descripcionComercio"
+            android:id="@+id/etPrecioProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="25dp"
             android:layout_marginRight="50dp"
             android:ems="10"
-            android:hint="Descripción"
-            android:inputType="textPersonName" />
+            android:hint="Precio"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/etStockProducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="50dp"
+            android:ems="10"
+            android:hint="Stock"
+            android:inputType="number" />
 
         <Button
-            android:id="@+id/bCrearComercio"
+            android:id="@+id/bCrearProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
