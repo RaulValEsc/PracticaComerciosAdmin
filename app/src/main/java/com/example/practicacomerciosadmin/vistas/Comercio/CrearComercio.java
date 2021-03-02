@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.example.practicacomerciosadmin.R;
@@ -66,16 +67,20 @@ public class CrearComercio extends AppCompatActivity {
                 database.child("comercios").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot child : dataSnapshot.getChildren()) {
-                            if (nombreComercio.getText().toString().equals(child.child("nombre").getValue().toString())) {
-                                comercioexiste=true;
-                                break;
+                        if(imageUri != null) {
+                            for (DataSnapshot child : dataSnapshot.getChildren()) {
+                                if (nombreComercio.getText().toString().equals(child.child("nombre").getValue().toString())) {
+                                    comercioexiste = true;
+                                    break;
+                                }
                             }
-                        }
-                        if (comercioexiste==false){
-                            crearComercio();
+                            if (comercioexiste == false) {
+                                crearComercio();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Este comercio ya está registrado", Toast.LENGTH_LONG).show();
+                            }
                         }else{
-                            Toast.makeText(getApplicationContext(),"Este comercio ya está registrado",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Tienes que introducir una imagen", Toast.LENGTH_LONG).show();
                         }
                     }
 
@@ -166,9 +171,12 @@ public class CrearComercio extends AppCompatActivity {
         database.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Comercio c = new Comercio(nombreComercio.getText().toString(),descripcionComercio.getText().toString(),imageUri,postStorage);
-                database.child("comercios").child(c.getNombre()).setValue(c);
+                if (imageUri!= null) {
+                    Comercio c = new Comercio(nombreComercio.getText().toString(), descripcionComercio.getText().toString(), imageUri, postStorage);
+                    database.child("comercios").child(c.getNombre()).setValue(c);
+                }
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

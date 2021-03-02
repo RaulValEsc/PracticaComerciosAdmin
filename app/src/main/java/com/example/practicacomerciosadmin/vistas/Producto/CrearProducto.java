@@ -68,24 +68,26 @@ public class CrearProducto extends AppCompatActivity {
                 database.child("productos").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if(!VistaComercio.borrarproductos) {
-                            if (nombreProducto.getText().toString().isEmpty() || stockProducto.getText().toString().isEmpty() || precioProducto.getText().toString().isEmpty()) {
-                                Toast.makeText(getApplicationContext(), "Rellene todos los campos", Toast.LENGTH_LONG).show();
-                            } else {
-                                for (DataSnapshot child : dataSnapshot.getChildren()) {
-                                    String aux = nombreProducto + "_" + VistaComercio.nombrecomercio;
-                                    if (aux.equals(child.getValue().toString())) {
-                                        productoexiste = true;
-                                        break;
-                                    }
-                                }
-                                if (productoexiste == false) {
-                                    crearProducto();
-                                    VistaComercio.borrarproductos = true;
+                        if (imageUri!=null) {
+                            if (!VistaComercio.borrarproductos) {
+                                if (nombreProducto.getText().toString().isEmpty() || stockProducto.getText().toString().isEmpty() || precioProducto.getText().toString().isEmpty()) {
+                                    Toast.makeText(getApplicationContext(), "Rellene todos los campos", Toast.LENGTH_LONG).show();
                                 } else {
-                                    nombreProducto.setText("");
-                                    stockProducto.setText("");
-                                    precioProducto.setText("");
+                                    for (DataSnapshot child : dataSnapshot.getChildren()) {
+                                        String aux = nombreProducto + "_" + VistaComercio.nombrecomercio;
+                                        if (aux.equals(child.getValue().toString())) {
+                                            productoexiste = true;
+                                            break;
+                                        }
+                                    }
+                                    if (productoexiste == false) {
+                                        crearProducto();
+                                        VistaComercio.borrarproductos = true;
+                                    } else {
+                                        nombreProducto.setText("");
+                                        stockProducto.setText("");
+                                        precioProducto.setText("");
+                                    }
                                 }
                             }
                         }
@@ -177,10 +179,12 @@ public class CrearProducto extends AppCompatActivity {
         database.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Producto p = new Producto(nombreProducto.getText().toString(),Double.parseDouble(precioProducto.getText().toString()),Integer.parseInt(stockProducto.getText().toString()),VistaComercio.nombrecomercio,imageUri,postStorage);
-                database.child("productos").child(p.getNombre()+"_"+p.getIdComercio()).setValue(p);
-                finish();
-                VistaComercio.borrarproductos=false;
+                if (imageUri!=null) {
+                    Producto p = new Producto(nombreProducto.getText().toString(), Double.parseDouble(precioProducto.getText().toString()), Integer.parseInt(stockProducto.getText().toString()), VistaComercio.nombrecomercio, imageUri, postStorage);
+                    database.child("productos").child(p.getNombre() + "_" + p.getIdComercio()).setValue(p);
+                    finish();
+                    VistaComercio.borrarproductos = false;
+                }
             }
 
             @Override
