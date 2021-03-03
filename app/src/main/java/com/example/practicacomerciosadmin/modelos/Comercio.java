@@ -2,8 +2,6 @@ package com.example.practicacomerciosadmin.modelos;
 
 import android.net.Uri;
 
-import java.util.ArrayList;
-
 public class Comercio {
 
     String imageUri, imgStorage;
